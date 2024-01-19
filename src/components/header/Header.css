@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    background: transparent;
+    justify-content: space-around;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-ul {
+    display: flex;
+    align-items: center;
+}
+
+.header-ul li {
+    list-style: none;
+    margin-right: 15px;
+}
+
+.header-ul li button {
+    padding: 8px 15px 8px 15px;
+    border-radius: 8px;
+    border: none;
+    background: #3c86e1;
+    color: white;
+}
+
+.header-ul li button:hover {
+    background: white;
+    color: #3c86e1;
+    border: 1px solid #3c86e1;
+}
+
+/* Mobile responsiveness */
+/* Your existing styles */
+
+.menu-icon {
+    display: none; /* Hide the menu icon by default for larger screens */
+    cursor: pointer;
+}
+
+.menu-icon.open .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-icon.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-icon.open .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block; /* Show the menu icon for smaller screens */
+    }
+    .header{
+        justify-content: space-between;
+    }
+
+    .header-ul {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        background: teal;
+        position: absolute;
+        top: 60px; /* Adjust based on your header height */
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        z-index: 1000;
+    }
+
+    .header-ul.open {
+        display: flex;
+    }
+
+    .header-ul li {
+        margin-bottom: 10px;
+    }
+}
+
